@@ -1,1 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Screen Orientation</title>
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+  <header>
+      <h1>Screen Orientation</h1>
+  </header>
+  <script>
+      function checkAndRotate() {
+  
+          var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+          if (isMobile) {
+              window.addEventListener('orientationchange', function () {
+                  var orientation = window.orientation;
+                  if (orientation === 90 || orientation === -90) {
+                      // // Màn hình ngang
+                      // var player = videojs('my-video');
+                      // player.muted(true);
+                      // player.play();
+                      //
+                      // if (player.requestFullscreen) {
+                      //     player.requestFullscreen();
+                      // } else if (player.mozRequestFullScreen) { // Firefox
+                      //     player.mozRequestFullScreen();
+                      // } else if (player.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                      //     player.webkitRequestFullscreen();
+                      // } else if (player.msRequestFullscreen) { // IE/Edge
+                      //     player.msRequestFullscreen();
+                      // }
+                      console.log('play and fullscreen');
+                  } else {
+                  }
+              });
+          } else {
+              // alert('Trang web không được xem trên thiết bị di động');
+          }
+      }
+  
+      checkAndRotate();
+  </script>
+</body>
+</html>
