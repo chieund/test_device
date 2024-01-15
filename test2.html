@@ -35,6 +35,7 @@
     function makeLandscape() {
         // this works on android, not iOS
         if (screen.orientation && screen.orientation.lock) {
+            alert("vao day");
             screen.orientation.lock('landscape');
         }
     }
