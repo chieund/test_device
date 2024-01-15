@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<div id="video-container">
-    <video width="320" height="240" controls>
+<div id="video-container1">
+    <video id="video-container" width="320" height="240" controls>
       <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
     </video>
     
@@ -37,6 +37,15 @@ alert("currentOrientation " + currentOrientation);
                 alert("Không thể xoay màn hình: " + error);
             });
         }
+    }
+
+    var element = document.getElementById('video-container');
+    if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+        makeLandscape();
+    } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen();
+        makeLandscape();
     }
 
     function makeLandscape() {
