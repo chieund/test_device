@@ -12,7 +12,7 @@
     if (screen.orientation) {
         // Xác định hướng màn hình hiện tại
         var currentOrientation = screen.orientation.type || screen.orientation;
-
+alert("currentOrientation " + currentOrientation);
         // Kiểm tra nếu hướng màn hình không phải là "landscape-primary" (ngang)
         if (currentOrientation !== "landscape-primary") {
             var element = document.getElementById('video-container');
@@ -24,7 +24,7 @@
                 makeLandscape();
             }
 
-            alert("Không thể xoay màn hình: " + currentOrientation);
+            
 
             // Thay đổi hướng màn hình thành "landscape-primary"
             screen.orientation.lock("landscape-primary").catch(function(error) {
