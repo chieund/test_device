@@ -24,6 +24,8 @@
                 makeLandscape();
             }
 
+            alert("Không thể xoay màn hình: " + currentOrientation);
+
             // Thay đổi hướng màn hình thành "landscape-primary"
             screen.orientation.lock("landscape-primary").catch(function(error) {
                 console.log("Không thể xoay màn hình: " + error);
