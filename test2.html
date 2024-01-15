@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="video-container">test</div>
+<button id="btn">test111</button>
+<script>
+    // Kiểm tra xem trình duyệt có hỗ trợ API screen.orientation hay không
+    if (screen.orientation) {
+        // Xác định hướng màn hình hiện tại
+        var currentOrientation = screen.orientation.type || screen.orientation;
+
+        // Kiểm tra nếu hướng màn hình không phải là "landscape-primary" (ngang)
+        if (currentOrientation !== "landscape-primary") {
+            // Thay đổi hướng màn hình thành "landscape-primary"
+            screen.orientation.lock("landscape-primary").catch(function(error) {
+                console.log("Không thể xoay màn hình: " + error);
+                alert("Không thể xoay màn hình: " + error);
+            });
+        }
+    }
+</script>
+</body>
+</html>
